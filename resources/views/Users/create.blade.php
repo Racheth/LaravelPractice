@@ -1,14 +1,16 @@
-@extends('plantilla')
+<!-- @extends('plantilla')
 
 @section('title','Create User')
 
 
-@section('content')
+@section('content') -->
 
 <form action="{{ route('users.store') }}" method="POST">
-    @csrf
+    <!-- @csrf -->
     <label for="name">Nombre</label>
     <input type="text" name="name" id="name">
+    <label for="name">lastname</label>
+    <input type="text" name="lastname" id="lastname">
     <label for="name">Email</label>
     <input type="email" name="email" id="email">
     <label for="password">Password</label>
@@ -17,4 +19,4 @@
 
 </form>
 
-@endsection
+<!-- @endsection -->
