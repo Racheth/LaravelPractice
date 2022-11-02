@@ -1,6 +1,6 @@
- @extends('plantilla')
+@extends('plantilla')
 
-@section('title','Create User')
+@section('title','Create Client')
 
 
 @section('content') -->
