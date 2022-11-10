@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -15,7 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return User::select('name')-> get();
+        $users = User::all();
+
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -25,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('create.users');
+        return view('create_user');
     }
 
     /**
@@ -36,14 +38,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::create($request -> all());
-        return $user;
-        // $user = new User();
-        // $user ->name = $request -> name;
-        // $user ->email = $request -> email;
-        // $user ->password = $request -> password;
 
-        // $user -> save();
+        $user = User::create($request->all());
+
+        return $user;
     }
 
     /**
@@ -54,7 +52,13 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return User::find($id);
+
+        $user = User::find($id);
+
+        return view('users.update', compact('user'));
+
+        #return User::where('id',$id)->get();
+
     }
 
     /**
@@ -75,9 +79,13 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user = User::find($request->if);
+
+        if ($user) {
+            $user->update($request->all());
+        }
     }
 
     /**

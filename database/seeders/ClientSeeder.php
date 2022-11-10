@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-#use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,17 +16,25 @@ class ClientSeeder extends Seeder
     public function run()
     {
         DB::table('clients')->insert([
-            'name' => 'Dara',
-            'lastname' => 'Alvarez',
-            'email' => 'Dara@alu.uabcs.mx',
-            'phone_number' => '6121551471',
+            'name' => 'Jonathan',
+            'lastname' => 'Soto',
+            'email' => 'jsoto@uabcs.mx',
+            'phone_number' => '6120000000'
         ]);
 
         DB::table('clients')->insert([
             'name' => 'Isaac',
-            'lastname' => 'Prado',
-            'email' => 'Isaac@alu.uabcs.mx',
-            'phone_number' => '6121551472',
+            'lastname' => 'Parkour',
+            'email' => 'isaco_lokito_moxxito@gmail.com',
+            'phone_number' => '6120000000'
         ]);
     }
 }
+
+
+
+
+
+
+
+
